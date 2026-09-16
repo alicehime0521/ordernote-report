@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>第2回 要因分析｜X広告 再審査落ち</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">第 2 回 ／ 2026年9月15日</p>
+    <h1>2回目の停止：LPは直っていた</h1>
+    <p class="sub">差し替えた広告とLPを再確認したうえで、原因がどこに残っているかを調べた記録です。</p>
+    <ul class="meta">
+      <li>停止日：2026年9月12日</li>
+      <li>前回：第1回（9/10）＝LPが原因</li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <a class="backlink" href="index.html">← レポート一覧に戻る</a>
+
+  <nav class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#s1">結論</a></li>
+      <li><a href="#s2">何をもって判断したか（判定の前提）</a></li>
+      <li><a href="#s3">何が起きたか（時系列と数字）</a></li>
+      <li><a href="#s4">直っていたもの</a></li>
+      <li><a href="#s5">原因候補のリスト</a></li>
+      <li><a href="#s6">候補1の検証：プロフィールのリンク先</a></li>
+      <li><a href="#s7">どのみち直すもの</a></li>
+      <li><a href="#s8">対策の方針</a></li>
+      <li><a href="#s9">この分析の限界／決めていただきたいこと</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">01</span>結論</h2>
+
+  <div class="verdict">
+    <p class="lead">LPは直っていました。落ちた原因はLPの外にあります。</p>
+    <p>いちばん可能性が高いのは、<strong>広告出稿用アカウント <code>@_note_motizuki</code> のプロフィール欄に貼られている旧LPのURL</strong>です。</p>
+  </div>
+
+  <pre class="flow">広告本文（問題なし）
+  ↓
+遷移先 ordernote-lp2.vercel.app（問題なし）
+  ↓
+LINE登録
+
+────── ここまでは直っている ──────
+
+広告主アカウント @_note_motizuki
+  ├ 表示名「もちづき｜引き寄せとノートの話」
+  └ プロフィールのウェブサイト欄
+        → deploy-ordernote-g8ha4h.vercel.app
+           ＝ 9/10に「これが原因」と特定した旧LPが、そのまま生きている</pre>
+
+  <div class="note warn">
+    <span class="t">ただし、これは推定です</span>
+    <p>Xのポリシー原文で審査対象として明記されているのは「広告クリエイティブ」と「ランディングページ」までで、<strong>広告主のプロフィールは書かれていません。</strong>（→ 2章）</p>
+    <p>それでも、<strong>遷移先だけ差し替えてもプロフィールから旧LPに行ける状態が残っている、というのは事実です。</strong>ここを残したまま3回目を出すのは避けたいと考えています。</p>
+  </div>
+
+  <h2 id="s2"><span class="num">02</span>何をもって判断したか（判定の前提）</h2>
+
+  <p>以下の判定はすべて、Xの「欺瞞的および詐欺的コンテンツ」ポリシー原文に照らしています。</p>
+
+  <h3>禁止されている5項目</h3>
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>分類</th><th>禁止されている内容（原文の要旨）</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td>欺瞞的なコンテンツ</td><td>クリックベイト／誤解を招く主張／オファーの重要情報の省略</td></tr>
+      <tr><td class="c">2</td><td>詐欺計画</td><td>「一攫千金」詐欺、マルチ商法、ねずみ講、金融詐欺</td></tr>
+      <tr><td class="c"><strong>3</strong></td><td><strong>非現実的な結果</strong></td><td><strong>不当な機会や結果を約束または示唆する内容を含めてはならない／非現実的な主張、特定の期間内での成果、または健康や経済的な機会を宣伝すること</strong></td></tr>
+      <tr><td class="c">4</td><td>システムを回避する</td><td>クローキング／審査後のURL差し替え</td></tr>
+      <tr><td class="c">5</td><td>存在しない機能・性能</td><td>機能しないCTA／過剰なリダイレクト</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>審査の対象範囲</h3>
+  <div class="tw">
+  <table>
+    <thead><tr><th>対象</th><th class="c">ポリシーに明記されているか</th></tr></thead>
+    <tbody>
+      <tr><td>広告クリエイティブ</td><td class="c"><span class="tag ok">明記あり</span></td></tr>
+      <tr><td>ランディングページ（広告の遷移先）</td><td class="c"><span class="tag ok">明記あり</span></td></tr>
+      <tr><td><strong>広告主アカウントのプロフィール・そのリンク先</strong></td><td class="c"><span class="tag ng">明記なし</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">ここが、この分析のいちばん弱いところです</span>
+    <p>「プロフィールが原因」という見立ては、ポリシー原文で裏が取れていません。推定です。</p>
+  </div>
+
+  <h3>それでも「免責が入っていること」を評価している理由</h3>
+  <p>3番の「不当な機会や結果を約束または示唆する」に対する、直接の打ち消しになるからです。</p>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td>成果には個人差があります</td><td>「結果を約束していない」ことの明示</td></tr>
+      <tr><td>特定の結果を保証するものではありません</td><td>「約束または示唆」の否定</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>ただし、<strong>免責を入れれば必ず通る、という規定はXにはありません。</strong>「約束していない」と読ませる材料が1つ増える、というだけです。入っていないより入っている方が良い、という判断で評価しています。</p>
+
+  <h3>この分析で使っている判定基準</h3>
+  <p>次の4つが1つでもあれば「クロ寄り」、どれもなければ「シロ寄り」と判定しています。</p>
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>見ているもの</th><th>ポリシーの該当箇所</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td>結果の約束・保証（「〜が叶う」「〜になれる」）</td><td>3番：結果を約束または示唆</td></tr>
+      <tr><td class="c">2</td><td>特定の期間内での成果（「1ヶ月で」「18時間後に」「3年で」）</td><td>3番：<strong>名指しで禁止</strong></td></tr>
+      <tr><td class="c">3</td><td>金額・年商・収入の提示</td><td>3番：経済的な機会</td></tr>
+      <tr><td class="c">4</td><td>金融審査・融資に関する記述</td><td>2番：金融詐欺</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="s3"><span class="num">03</span>何が起きたか</h2>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">日付</th><th>出来事</th></tr></thead>
+    <tbody>
+      <tr><td class="c">9/2</td><td>広告3本を出稿 → 配信開始</td></tr>
+      <tr><td class="c">9/7 午前</td><td><strong>3本すべて Halted</strong>（欺瞞的および詐欺的コンテンツ）</td></tr>
+      <tr><td class="c">9/8 〜 9/10</td><td>配信ゼロ</td></tr>
+      <tr><td class="c">9/10</td><td>要因分析 → LPが原因と特定 → LP v2（1枚ページ）を作成</td></tr>
+      <tr><td class="c">9/11 19:20</td><td>新クリエイティブ3本＋新LPで再出稿（同じキャンペーンに追加）</td></tr>
+      <tr><td class="c">9/11 〜 9/12</td><td>配信された。ただし6本中1本だけ</td></tr>
+      <tr><td class="c">9/12 〜 9/13</td><td><strong>新3本も Halted。理由は同じ「欺瞞的および詐欺的コンテンツ」</strong></td></tr>
+      <tr><td class="c">9/15</td><td>6本すべて Halted を確認</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>配信できた2日間の実績</h3>
+  <div class="strip">
+    <div class="stat"><div class="l">インプレッション</div><div class="v">30,127</div></div>
+    <div class="stat"><div class="l">リンククリック</div><div class="v">229</div></div>
+    <div class="stat"><div class="l">CTR</div><div class="v">0.76<small>%</small></div></div>
+    <div class="stat"><div class="l">CPC</div><div class="v">¥22.63</div></div>
+    <div class="stat"><div class="l">消化</div><div class="v">¥5,183</div></div>
+    <div class="stat"><div class="l">購入</div><div class="v">0</div></div>
+  </div>
+
+  <div class="note ok">
+    <span class="t">数字が悪くて止まったのではありません</span>
+    <p>1回目のCTRは0.69%だったので、むしろ上がっていました。</p>
+  </div>
+
+  <h2 id="s4"><span class="num">04</span>直っていたもの</h2>
+
+  <h3>新クリエイティブ3本（9月11日作成）</h3>
+  <p>画像内のテキストと投稿本文を、3本とも全数確認しました。</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>広告</th><th>本文</th><th class="c">判定</th></tr></thead>
+    <tbody>
+      <tr><td>案1<br>書く前</td><td>以前の僕は、ノートを開いてすぐに欲しい未来を書いていました。／でも、そこから書き始めると「まだ叶っていない」という前提のまま進んでしまいます。／今は、書く前に自分がどんな状態にいるのかを確認するようにしています。／オーダーノートの手順を、LINEにまとめました。</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td>案2<br>1000枚</td><td>コピー用紙に願望を書き続けて、1,000枚になった時期があります。／それでも、変わったことはほとんどありませんでした。／見直したのは、願望の内容でも、書く回数でもありません。／変えたのは、ノートを開いて「1行目に書くもの」でした。／オーダーノートの手順を、LINEにまとめました。</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td>案3<br>書く順番</td><td>願望をきれいに書く。毎日欠かさず続ける。叶った未来をイメージする。／僕もひと通り試してきました。／その中で見直したのは「何を書くか」ではなく、「どんな状態から、どんな順番で書くか」でした。／オーダーノートの手順を、LINEにまとめました。</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>観点</th><th class="c">結果</th></tr></thead>
+    <tbody>
+      <tr><td>結果の約束・保証</td><td class="c"><span class="tag ok">なし</span></td></tr>
+      <tr><td>特定の期間内での成果</td><td class="c"><span class="tag ok">なし</span></td></tr>
+      <tr><td>金額・年商・収入</td><td class="c"><span class="tag ok">なし</span></td></tr>
+      <tr><td>「引き寄せ」という語</td><td class="c"><span class="tag ok">3本とも削除</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>9月2日版との本文の差分</h4>
+  <p>管理画面で6本すべての本文を1本ずつ開いて照合しました。<strong>3本とも書き出しの1行目がほぼ同じか完全に同じ</strong>なので一覧では見分けがつきませんが、2行目以降が書き換わっています。</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th>箇所</th><th>9月2日版（停止）</th><th>9月11日版（現行）</th></tr></thead>
+    <tbody>
+      <tr><td>案1・2行目</td><td>それでは「今はまだ叶っていない」という<strong>焦りから</strong>書き始めてしまいます</td><td>そこから書き始めると「まだ叶っていない」という<strong>前提のまま</strong>進んでしまいます</td></tr>
+      <tr><td>案1・3行目</td><td>今は<strong>引き寄せたいもの</strong>を書く前に</td><td>今は、書く前に</td></tr>
+      <tr><td>案2・2行目</td><td>それでも、<strong>引き寄せられたもの</strong>はほとんどありませんでした</td><td>それでも、<strong>変わったこと</strong>はほとんどありませんでした</td></tr>
+      <tr><td>案2・4行目</td><td>変えたのは「<strong>願望を書く前の手順</strong>」でした</td><td>変えたのは、<strong>ノートを開いて「1行目に書くもの」</strong>でした</td></tr>
+      <tr><td>案3・4行目</td><td>オーダーノートで<strong>大切にしている、願望を書く前の手順</strong>をLINEにまとめています</td><td>オーダーノートの<strong>手順</strong>を、LINEにまとめました</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>画像と遷移先も入れ替わっています。画像は3本とも新しいものに差し替え、遷移先は <code>ordernote-lp.vercel.app</code> から <code>ordernote-lp2.vercel.app</code> に変更しました。<strong>「引き寄せ」という語は、9月11日版では本文・画像・広告名のどこにも残っていません。</strong></p>
+
+  <h3>遷移先 <code>ordernote-lp2.vercel.app</code></h3>
+  <p>本文テキストと画像4枚、両方を実際に開いて確認しました。</p>
+
+  <h4>可視テキスト（全文）</h4>
+  <blockquote>
+    <p>オーダーノートにご興味がある方、チャレンジしてみたい方は、こちらのLINEにご登録ください。</p>
+    <p>本ページで紹介している内容は、開発者個人の経験に基づくものです。実践による成果には個人差があり、特定の結果を保証するものではありません。</p>
+    <p>会社概要 ／ 特定商取引法に基づく表記 ／ プライバシーポリシー ／ キャンセルポリシー</p>
+  </blockquote>
+
+  <h4>画像の中身（目視）</h4>
+  <div class="tw">
+  <table>
+    <thead><tr><th>画像</th><th>中身</th><th class="c">判定</th></tr></thead>
+    <tbody>
+      <tr><td>ヘッドコピー</td><td><strong>願望を書く前に、やることがある。オーダーノートのつくり方</strong></td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td>動画案内</td><td>そこで、オーダーノートの全てを動画に収録しました。その動画をLINEで配信します</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td>ノートの写真</td><td>装飾されたノート（コンパス・宝石・ランタン・金の枠）</td><td class="c"><span class="tag warn">文字はないが<br>「魔法の書」を連想</span></td></tr>
+      <tr><td>LINEボタン</td><td>登録ボタン</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ok">
+    <span class="t">9月10日に直した箇所は、全部きちんと直っていました</span>
+    <p>結果の約束なし、期間内の成果なし、金額なし、免責あり。</p>
+  </div>
+
+  <h2 id="s5"><span class="num">05</span>原因候補のリスト</h2>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>候補</th><th>根拠</th><th class="c">確からしさ</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td><strong>プロフィールのウェブサイト欄が旧LPのまま</strong></td><td>実際に開いて確認。9/10にNGと特定した文言が100%残っている（→ 6章）</td><td class="c"><span class="tag ng">高い</span></td></tr>
+      <tr><td class="c">2</td><td>同じキャンペーンに、停止済みの旧3本が残っている</td><td>再出稿は既存キャンペーンへの追加だった。キャンペーン単位でフラグが立っている可能性</td><td class="c"><span class="tag warn">中</span></td></tr>
+      <tr><td class="c">3</td><td>アカウントに違反履歴が2回ついている</td><td>9/7に3本、9/12に3本。審査基準が段階的に厳しくなる</td><td class="c"><span class="tag warn">中</span></td></tr>
+      <tr><td class="c">4</td><td>アカウント表示名に「引き寄せ」が入っている</td><td>「もちづき｜引き寄せとノートの話」。広告本文からは消したのに、名前には残っている</td><td class="c"><span class="tag warn">中</span></td></tr>
+      <tr><td class="c">5</td><td>メインアカウント <code>@shunsuke_spirit</code> のプロフィール</td><td>bioに年数・金額の記載があり、同じオーダーノートを扱っている。広告出稿用アカウントのページに関連表示される</td><td class="c"><span class="tag warn">中</span></td></tr>
+      <tr><td class="c">6</td><td>LINE登録ページの中身</td><td>LPの次の遷移先。まだ確認できていない</td><td class="c"><span class="tag flat">未検証</span></td></tr>
+      <tr><td class="c">7</td><td>新LPのノート画像（装飾されたノート）</td><td>文字はない。単体では弱い</td><td class="c"><span class="tag flat">低い</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h2 id="s6"><span class="num">06</span>候補1の検証：プロフィールのリンク先を実際に開きました</h2>
+
+  <h3>プロフィールの現状（<code>@_note_motizuki</code>）</h3>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td>表示名</td><td>もちづき｜引き寄せとノートの話</td></tr>
+      <tr><td>bio</td><td>26歳のとき、収入なし・実家暮らし・借金あり。／そこから《オーダーノート》を書き始めて、暮らしも仕事も変わっていきました。／僕が今も続けている書く順番を、LINEにまとめています↓</td></tr>
+      <tr><td><strong>ウェブサイト欄</strong></td><td><strong><code>deploy-ordernote-g8ha4h.vercel.app</code></strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>そのリンク先に、9月10日でNGと判定した文言がそのまま残っています</h3>
+  <p>実際に開いて本文を取得しました。以下はすべて、現在も掲載されているものです。</p>
+
+  <h4>期間内の成果（Xが名指しで禁止している項目）</h4>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td><strong>書いた願望が1ヶ月〜遅くても3ヶ月以内に実現するようになってしまいました</strong></td></tr>
+      <tr><td><strong>すると、書いてから18時間後に、一人のビジネスマンと偶然の出会いがありました</strong></td></tr>
+      <tr><td>「経営者になりたい」と書いたところ、<strong>それから3ヶ月後</strong>…</td></tr>
+      <tr><td><strong>書いてから6ヶ月後に</strong>、30項目全て当てはまった人と出会い</td></tr>
+      <tr><td>ちょっと落胆していたら、<strong>ちょうど3日後</strong>、不動産賃貸をやっている友人から連絡がきて</td></tr>
+      <tr><td>すると、<strong>1週間後</strong>、以前お世話になった女性の先輩から連絡が届きます</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>経済的な機会・金額</h4>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td><strong>3年で年商6億、社員22名の会社の社長になることができました</strong></td></tr>
+      <tr><td><strong>結果的に3ヶ月目に2,500万円の売り上げに繋がったのです</strong></td></tr>
+      <tr><td>売上の2,500万円のうち<strong>500万円</strong>を「自分らしさを表現できる服を買う」と決めて</td></tr>
+      <tr><td>最初に書いた1記事で<strong>収入が立つ</strong>ようになり、その後<strong>5年に渡り収入の1つの柱</strong>となりました</td></tr>
+      <tr><td><strong>どの金融機関に行ってもローンが通らないことがネック…知り合いの金融機関を紹介してくれて、特別に審査を通してくれたのです</strong>（金融審査に関する記述）</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4>断定・非現実的な主張</h4>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td>そんな<strong>魔法のノート</strong>があったらあなたはどうしますか？</td></tr>
+      <tr><td>つまり、<strong>なんでも願望を叶えてくれるノート</strong>は…</td></tr>
+      <tr><td>オーダーノートは、<strong>理想の住まいを引き寄せるのに最適です</strong></td></tr>
+      <tr><td>僕はこれまで<strong>4度</strong>、その時々で理想だと思う住まいを<strong>引き寄せてきました</strong></td></tr>
+      <tr><td>僕自身が何か策略を練ったり…<strong>努力したわけではありませんでした</strong></td></tr>
+      <tr><td><strong>エンジェルナンバーで33というのは、「願いが実現する幸運の数字」です</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">つまり</span>
+    <p>9月10日に「これが原因」と特定した文言が、プロフィールのリンク先に一字も変わらず残っています。<strong>広告の遷移先だけを新LPに差し替え、プロフィールのURLには手をつけていませんでした。</strong></p>
+  </div>
+
+  <h2 id="s7"><span class="num">07</span>どのみち直すもの</h2>
+
+  <p>新しいアカウントに移るとしても、ここを直さないと同じことが繰り返されます。</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>対象</th><th>やること</th><th class="c">判断</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td><code>@_note_motizuki</code><br>（広告出稿用）</td><td><strong>ウェブサイト欄を、旧LPから新LPに差し替える</strong></td><td class="c"><span class="tag ng">要判断</span></td></tr>
+      <tr><td class="c">2</td><td><code>@shunsuke_spirit</code><br>（メイン）</td><td><strong>同上。こちらも旧LPを指しています</strong></td><td class="c"><span class="tag ng">要判断</span></td></tr>
+      <tr><td class="c">3</td><td><code>@_note_motizuki</code></td><td>表示名から「引き寄せ」を外す</td><td class="c"><span class="tag ng">要判断</span></td></tr>
+      <tr><td class="c">4</td><td>X Ads Manager</td><td>停止済みの旧6本をアーカイブする</td><td class="c"><span class="tag ok">こちらで可</span></td></tr>
+      <tr><td class="c">5</td><td>旧LPそのもの</td><td>差し替えるか、残すか</td><td class="c"><span class="tag ng">要判断</span></td></tr>
+      <tr><td class="c">6</td><td>LINE登録ページ</td><td>中身を確認する</td><td class="c"><span class="tag ok">こちらで可</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">1と2は、両方やらないと意味がありません</span>
+    <p>どちらか片方だけ直しても、もう片方から旧LPに着いてしまいます。</p>
+  </div>
+
+  <h3>5について：流入元の集計を壊さない差し替え方</h3>
+  <div class="tw">
+  <table>
+    <thead><tr><th>URL</th><th>用途</th><th class="c">流入元識別子</th></tr></thead>
+    <tbody>
+      <tr><td><code>deploy-ordernote-g8ha4h.vercel.app</code></td><td>両アカウントのプロフィール</td><td class="c"><code>uLand=g8Ha4h</code></td></tr>
+      <tr><td><code>ordernote-lp2.vercel.app</code></td><td>広告の遷移先</td><td class="c"><code>uLand=W4Oacr</code></td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p>この識別子は流入元の集計に使われているものなので、単純に差し替えると集計が崩れます。<strong>新LPと同じ内容で、LINEリンクに <code>?uLand=g8Ha4h</code> を付けたページを1枚作れば、集計を壊さずに差し替えられます。</strong>作業は30分ほどです。</p>
+
+  <h2 id="s8"><span class="num">08</span>対策の方針</h2>
+
+  <h3>なぜ「このアカウントで粘る」を選ばないか</h3>
+
+  <p>審査落ちのあと、何も直さずに再度出すとアカウントがBANされやすくなる、というのは8月の勉強会でも共有いただいていた点です。繰り返すとアカウントの信頼が失われ、そのあと広告出稿自体ができなくなります。今の状態をこの基準に当てはめると、次のようになります。</p>
+
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td class="c">1回目</td><td>9/7 Halted（3本）</td></tr>
+      <tr><td class="c"><strong>もう一回上げた</strong></td><td>9/11 再出稿（新クリエイティブ・新LP）</td></tr>
+      <tr><td class="c">2回目</td><td>9/12 Halted（3本）</td></tr>
+      <tr><td class="c"><strong>次に上げると</strong></td><td><strong>3回目にあたります</strong></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">同じアカウントでの3回目は避けたいです</span>
+    <p>BANになると、そのアカウントでは二度と広告が出せません。</p>
+  </div>
+
+  <h3>ステップ1：新しいアカウントで出し直す</h3>
+  <p>ただし、アカウントを変えるだけでは同じことが起きます。今のアカウントで残っていた要素を持ち込まない形にします。</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>新アカウントで守ること</th><th>理由</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td><strong>プロフィールのウェブサイト欄に、旧LPを入れない</strong></td><td>今回いちばん怪しい要素。新LPを指す</td></tr>
+      <tr><td class="c">2</td><td><strong>表示名・bioに「引き寄せ」を入れない</strong></td><td>広告本文からは消したのに、名前に残っていた</td></tr>
+      <tr><td class="c">3</td><td><strong>bioに金額・年商・期間を入れない</strong></td><td>メインアカウントのbioと同じ轍を踏まない</td></tr>
+      <tr><td class="c">4</td><td>新しいキャンペーンで出す（既存に追加しない）</td><td>9/11は既存キャンペーンへの追加だった</td></tr>
+      <tr><td class="c">5</td><td>広告は9/11の3本をそのまま使う</td><td>問題なしと確認済み。変数を増やさない</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ok">
+    <span class="t">これで3つを同時に清算できます</span>
+    <p>アカウント・プロフィール・キャンペーン。今回怪しい要素が、まとめて切り離せます。</p>
+  </div>
+
+  <h3>ステップ2：それでも落ちたら、変数を1つずつ動かす</h3>
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">順</th><th>動かすもの</th><th>何が分かるか</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td>キャンペーンを新規に作り直す（同じアカウント内）</td><td>キャンペーン単位のフラグかどうか</td></tr>
+      <tr><td class="c">2</td><td>遷移先をLINE登録ページ直に変える（LPを挟まない）</td><td>LP側にまだ何か残っているかどうか</td></tr>
+      <tr><td class="c">3</td><td>広告本文をさらに削る（画像なし・テキストのみ）</td><td>クリエイティブ側かどうか</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p><strong>1回に1つだけ動かします。</strong>まとめて変えると、何が効いたか分からなくなります。</p>
+
+  <h3>ステップ3：それでも通らない場合に考えること</h3>
+
+  <div class="note warn">
+    <span class="t">商材そのものがXの審査と相性が悪い可能性があります</span>
+    <p>オーダーノートは「書くと願いが叶う」という商品です。この商品を正直に説明すると、どうしても3番の「結果を約束または示唆」に近づきます。</p>
+  </div>
+
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td>言葉を弱めると</td><td>商品の魅力が伝わらず、CTRが落ちる</td></tr>
+      <tr><td>言葉を強めると</td><td>審査に引っかかる</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>この綱引きが構造的にあるということは、望月さんとも共有しておいたほうがよいと思います。X以外の媒体（Meta／リスティング）との比較検討も、選択肢として残ります。</p>
+
+  <h2 id="s9"><span class="num">09</span>この分析の限界</h2>
+
+  <ul class="check">
+    <li>X側から「ここが原因」という個別の通知は来ていません。画面に出ているのはポリシー名だけです。</li>
+    <li>上記は、ポリシー原文と、広告・LP・プロフィール・リンク先を突き合わせた<strong>推定</strong>です。</li>
+    <li>ただし、広告本文と遷移先LPは実際に確認して問題なしなので、消去法でアカウント側が残ります。</li>
+    <li>そして、プロフィールのリンク先には、前回NGと特定した文言が実際に残っています。</li>
+    <li>LINE登録ページはまだ確認できていません。</li>
+  </ul>
+
+  <h2><span class="num">10</span>決めていただきたいこと</h2>
+
+  <ul class="check">
+    <li><strong>お持ちの予備のXアカウントを使うか、新しく作るか。</strong></li>
+    <li><strong>2つのアカウントのプロフィール（リンク先と表示名）を、こちらで直してよいか。</strong></li>
+    <li><strong>旧LPそのものを差し替えるか、残すか。</strong></li>
+    <li><strong>同じアカウントで3回目を試すのは避ける、という方針でよいか。</strong></li>
+  </ul>
+
+  <p>方針をいただければ、新アカウントのプロフィール整備、新キャンペーンでの出稿、停止済み広告のアーカイブ、LINE登録ページの確認、プロフィール用のクリーンなLPの作成まで、こちらで進めます。</p>
+
+  <div class="note warn">
+    <span class="t">再審査請求（Appeal）は押していません</span>
+    <p>修正しないまま出すとアカウント自体が危うくなるためです。</p>
+  </div>
+
+  <div class="pager">
+    <a href="report1.html"><span class="label">第1回 ／ 2026.09.10</span><span class="name">← 1回目の停止：原因はLPだった</span></a>
+    <a href="index.html"><span class="label">目次</span><span class="name">レポート一覧に戻る</span></a>
+  </div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">オーダーノート X広告 要因分析レポート 第2回 ／ 2026年9月15日</div>
+</footer>
+
+</body>
+</html>

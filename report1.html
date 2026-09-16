@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>第1回 要因分析｜X広告 審査落ち</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <p class="eyebrow">第 1 回 ／ 2026年9月10日</p>
+    <h1>1回目の停止：原因はLPだった</h1>
+    <p class="sub">「欺瞞的および詐欺的コンテンツ」でHaltedになった広告3本について、広告・LPを全数調査した記録です。</p>
+    <ul class="meta">
+      <li>停止日：2026年9月7日</li>
+      <li>調査：広告3本／LP画像38枚／LP本文478行</li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <a class="backlink" href="index.html">← レポート一覧に戻る</a>
+
+  <nav class="toc">
+    <h2>目次</h2>
+    <ol>
+      <li><a href="#s1">結論</a></li>
+      <li><a href="#s2">Xのポリシー原文</a></li>
+      <li><a href="#s3">広告クリエイティブ3本の調査</a></li>
+      <li><a href="#s4">LP画像の調査</a></li>
+      <li><a href="#s5">LP本文の調査</a></li>
+      <li><a href="#s6">なぜ9月2日から6日は配信できたのか</a></li>
+      <li><a href="#s7">直す順番の提案</a></li>
+      <li><a href="#s8">この分析の限界</a></li>
+    </ol>
+  </nav>
+
+  <h2 id="s1"><span class="num">01</span>結論</h2>
+
+  <div class="verdict">
+    <p class="lead">広告文ではなく、遷移先のLPが原因です。</p>
+    <p>LPは1画面目から、Xが名指しで禁止している「結果の約束」と「特定の期間内での成果」を掲げていました。</p>
+  </div>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">順位</th><th>場所</th><th>文言</th><th class="c">種別</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td>1画面目（ファーストビュー）</td><td><strong>書くだけで願望を引き寄せる オーダーノートのつくり方</strong></td><td class="c"><span class="tag ng">画像</span></td></tr>
+      <tr><td class="c">2</td><td>1画面目のすぐ下</td><td><strong>「このノートに書いた願望は全て叶う」</strong></td><td class="c"><span class="tag ng">画像</span></td></tr>
+      <tr><td class="c">3</td><td>上から3画面目</td><td><strong>書いた願望が1ヶ月〜遅くても3ヶ月以内に実現するようになってしまいました</strong></td><td class="c"><span class="tag ng">テキスト</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">画像の中の文字は、テキスト検査では見つかりません</span>
+    <p>1と2は画像です。ページのテキストを機械的に調べても出てきません。38枚を1枚ずつ目で見て、初めて出てきました。<strong>なかでも1の「書くだけで願望を引き寄せる」が最大の要因です。</strong>LPのタイトルであり、いちばん最初に目に入ります。</p>
+  </div>
+
+  <h2 id="s2"><span class="num">02</span>Xのポリシー原文</h2>
+
+  <p>広告管理画面の「詳細を見る」のリンク先にあたる、Xの広告ポリシーです。禁止されているのは5つあります。</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>分類</th><th>禁止されている内容</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td>欺瞞的なコンテンツ</td><td>クリックベイト／誤解を招く主張／オファーの重要情報の省略</td></tr>
+      <tr><td class="c">2</td><td>詐欺計画</td><td>「一攫千金」詐欺、マルチ商法、ねずみ講、金融詐欺</td></tr>
+      <tr><td class="c"><strong>3</strong></td><td><strong>非現実的な結果</strong></td><td><strong>広告には、不当な機会や結果を約束または示唆する内容を含めてはならない。非現実的な主張、特定の期間内での成果、または健康や経済的な機会を宣伝すること。</strong></td></tr>
+      <tr><td class="c">4</td><td>システムを回避する</td><td>クローキング／審査後のURL差し替え</td></tr>
+      <tr><td class="c">5</td><td>存在しない機能・性能</td><td>機能しないCTA／過剰なリダイレクト</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">3番に該当しています</span>
+    <p>そしてXの広告審査は、広告そのものだけでなく<strong>遷移先のランディングページも対象</strong>だと明記されています。</p>
+  </div>
+
+  <h2 id="s3"><span class="num">03</span>広告クリエイティブ3本の調査</h2>
+
+  <p>画像内のテキストも投稿本文も、3本すべて最後まで確認しました。</p>
+
+  <h3>案1：引き寄せたい時</h3>
+  <blockquote>
+    <p><strong>画像：</strong>引き寄せたい時、僕はノートに「願望」から書き始めません。</p>
+    <p><strong>本文：</strong>以前の僕は、ノートを開くとすぐに欲しい未来を書いていました。／でも、それでは「今はまだ叶っていない」という焦りから書き始めてしまいます。／今は引き寄せたいものを書く前に、まず自分がどんな状態にいるのかを確認します。／僕が実践しているオーダーノートの手順を、LINEにまとめています。</p>
+  </blockquote>
+
+  <h3>案2：1,000枚書いても</h3>
+  <blockquote>
+    <p><strong>画像：</strong>願望をコピー用紙に1,000枚ほど書いても、ほとんど引き寄せられなかった。僕が最初に変えたこと。</p>
+    <p><strong>本文：</strong>コピー用紙に願望を書き続けて、1,000枚になった時期があります。／それでも、引き寄せられたものはほとんどありませんでした。／見直したのは、願望の内容でも、書く回数でもありません。／変えたのは「願望を書く前の手順」でした。／今も続けているオーダーノートの手順を、LINEで紹介しています。</p>
+  </blockquote>
+
+  <h3>案3：書く順番</h3>
+  <blockquote>
+    <p><strong>画像：</strong>願望をノートに書いても引き寄せられない。僕が見直したのは、願望ではなく「書く順番」でした。</p>
+    <p><strong>本文：</strong>願望をきれいに書く。／毎日欠かさず続ける。／叶った未来をイメージする。／僕も、いろいろな方法を試してきました。／その中で見直したのが、「何を書くか」ではなく「どんな状態から、どんな順番で書くか」です。／オーダーノートで大切にしている、願望を書く前の手順をLINEにまとめています。</p>
+  </blockquote>
+
+  <h4>判定</h4>
+  <div class="tw">
+  <table>
+    <thead><tr><th>観点</th><th class="c">結果</th></tr></thead>
+    <tbody>
+      <tr><td>結果の約束・保証</td><td class="c"><span class="tag ok">なし</span></td></tr>
+      <tr><td>特定の期間内での成果</td><td class="c"><span class="tag ok">なし</span></td></tr>
+      <tr><td>金額・年商・収入</td><td class="c"><span class="tag ok">なし</span></td></tr>
+      <tr><td>断定</td><td class="c"><span class="tag ok">なし</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ok">
+    <span class="t">広告文を直しても解決しません</span>
+    <p>3本とも、むしろ「引き寄せられなかった」という否定形から入っています。LP側が本丸です。</p>
+  </div>
+
+  <h2 id="s4"><span class="num">04</span>LP画像の調査</h2>
+
+  <p>PC版19枚とスマホ版19枚、合わせて38枚を目視しました。中身は同じで、画面幅による出し分けです。以下は重複を除いた19種類を、出てくる順に並べたものです。</p>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>画像内のテキスト</th><th class="c">判定</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td><strong>書くだけで願望を引き寄せる オーダーノートのつくり方</strong></td><td class="c"><span class="tag ng">最大の要因</span></td></tr>
+      <tr><td class="c">2</td><td><strong>「このノートに書いた願望は全て叶う」</strong></td><td class="c"><span class="tag ng">最も強い断定</span></td></tr>
+      <tr><td class="c">3</td><td>（ノートの写真・文字なし）</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td class="c">4</td><td>そんな都合のいい話、あるわけないだろ！！！！</td><td class="c"><span class="tag warn">否定→反転</span></td></tr>
+      <tr><td class="c">5</td><td>Case01 <strong>月1で海外旅行にいける人生を引き寄せた</strong></td><td class="c"><span class="tag ng">結果の示唆</span></td></tr>
+      <tr><td class="c">6</td><td>（写真）海外旅行で訪れたスペインの夜景／パームジュメイラ</td><td class="c"><span class="tag warn">富の演出</span></td></tr>
+      <tr><td class="c">7</td><td>Case02 <strong>無理だと思っていた不動産オーナーに</strong></td><td class="c"><span class="tag ng">経済的な機会</span></td></tr>
+      <tr><td class="c">8</td><td>Case03 <strong>3年で年商6億の社長になれた</strong></td><td class="c"><span class="tag ng">経済的な機会＋期間</span></td></tr>
+      <tr><td class="c">9</td><td>Case04 <strong>【18時間で引き寄せ】理想のビジネスパートナーに出会う</strong></td><td class="c"><span class="tag ng">期間内の成果</span></td></tr>
+      <tr><td class="c">10</td><td>（写真）合宿の様子（顔ぼかし済み）</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td class="c">11</td><td>Case05 理想の女性について30項目を本気で書いた結果</td><td class="c"><span class="tag warn">結果の示唆</span></td></tr>
+      <tr><td class="c">12</td><td>Case06 <strong>理想の住まいを手に入れる</strong></td><td class="c"><span class="tag ng">結果の約束</span></td></tr>
+      <tr><td class="c">13</td><td>（写真）内見で案内された33階のフロア</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td class="c">14</td><td>（写真）33階の自宅から</td><td class="c"><span class="tag warn">富の演出</span></td></tr>
+      <tr><td class="c">15</td><td>（装飾線・文字なし）</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td class="c">16</td><td>オーダーノート開発者 望月俊亮</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td class="c">17</td><td>そこで、オーダーノートの全てを動画に収録しました。</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td class="c">18</td><td>その動画をLINEで配信します</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td class="c">19</td><td>LINE登録の案内・ボタン</td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">画像だけで</span>
+    <p>結果の約束が6か所、期間の約束が2か所、経済的な機会が2か所ありました。</p>
+  </div>
+
+  <h2 id="s5"><span class="num">05</span>LP本文の調査</h2>
+
+  <p>可視テキスト478行を全数確認しました。該当するものを種類別に並べます。</p>
+
+  <h3>A. 期間内の成果（Xが名指しで禁止している項目）</h3>
+  <div class="tw">
+  <table>
+    <thead><tr><th>場所</th><th>本文</th></tr></thead>
+    <tbody>
+      <tr><td>3画面目</td><td><strong>書いた願望が1ヶ月〜遅くても3ヶ月以内に実現するようになってしまいました</strong></td></tr>
+      <tr><td>Case04</td><td>すると、<strong>書いてから18時間後に</strong>、一人のビジネスマンと偶然の出会いがありました</td></tr>
+      <tr><td>Case03</td><td>「経営者になりたい」と書いたところ、<strong>それから3ヶ月後</strong>…</td></tr>
+      <tr><td>Case05</td><td><strong>書いてから6ヶ月後に</strong>、30項目全て当てはまった人と出会い</td></tr>
+      <tr><td>Case06</td><td>ちょっと落胆していたら、<strong>ちょうど3日後</strong>、不動産賃貸をやっている友人から連絡がきて</td></tr>
+      <tr><td>Case01</td><td>すると、<strong>1週間後</strong>、以前お世話になった女性の先輩から連絡が届きます</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h3>B. 経済的な機会・具体的な金額</h3>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td><strong>3年で年商6億</strong>、社員22名の会社の社長になることができました</td></tr>
+      <tr><td>結果的に<strong>3ヶ月目に2,500万円の売り上げ</strong>に繋がったのです</td></tr>
+      <tr><td>売上の2,500万円のうち<strong>500万円</strong>を「自分らしさを表現できる服を買う」と決めて</td></tr>
+      <tr><td>最初に書いた1記事で<strong>収入が立つ</strong>ようになり、その後<strong>5年に渡り収入の1つの柱</strong>となりました</td></tr>
+      <tr><td>どの金融機関に行っても<strong>ローンが通らない</strong>ことがネック…知り合いの金融機関を紹介してくれて、<strong>特別に審査を通してくれた</strong>のです</td></tr>
+      <tr><td>その物件から得られた<strong>不動産収入</strong>が、のちのち僕のピンチを何度も救ってくれた</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ng">
+    <span class="t">金融審査の記述に注意</span>
+    <p>「ローンが通らなかったが、特別に審査を通してくれた」という記述は、3番の「経済的な機会」だけでなく、2番の「金融詐欺」にも触れうる書き方です。</p>
+  </div>
+
+  <h3>C. 断定・非現実的な主張</h3>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td>そんな<strong>魔法のノート</strong>があったらあなたはどうしますか？</td></tr>
+      <tr><td>つまり、<strong>なんでも願望を叶えてくれるノート</strong>は、ノートそのものに秘密があるわけじゃないんです</td></tr>
+      <tr><td>オーダーノートは、<strong>理想の住まいを引き寄せるのに最適です</strong></td></tr>
+      <tr><td>僕はこれまで<strong>4度</strong>、その時々で理想だと思う住まいを<strong>引き寄せてきました</strong></td></tr>
+      <tr><td>これも<strong>オーダーノートの力</strong>なのか、<strong>予期せぬ力が働いて</strong></td></tr>
+      <tr><td>僕自身が何か策略を練ったり…<strong>努力したわけではありませんでした</strong></td></tr>
+      <tr><td>おまけに願望が<strong>テンポ良く叶っていく</strong>ので</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>とくに「努力したわけではありませんでした」は、<strong>「努力なしで結果が出る」＝ポリシーの言う「不当な機会」の典型</strong>にあたります。</p>
+
+  <h3>D. 疑似科学・スピリチュアルの断定</h3>
+  <div class="tw">
+  <table>
+    <tbody>
+      <tr><td><strong>エンジェルナンバーで33というのは、「願いが実現する幸運の数字」です</strong></td></tr>
+      <tr><td>このように<strong>シンクロニシティが起こるときというのは、たいてい夢が叶う予兆</strong>を表してます</td></tr>
+      <tr><td>自分の生年月日を全て足した「<strong>運命数</strong>」も33です</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p>内容そのものよりも、<strong>「〜と言われています」ではなく「〜です」と言い切っている</strong>ことがリスクになります。</p>
+
+  <h3>E. 構成そのもののリスク</h3>
+  <blockquote>
+    <p>「そんな都合のいい話、あるわけないだろ！！！！」<br>→ 直後に「僕もそう思ってました」→「ところが実現するようになってしまいました」</p>
+  </blockquote>
+  <p>読者の疑いを先回りして打ち消し、そのうえで非現実的な結果を信じさせる、という運びです。審査で「欺瞞的なコンテンツ」と読まれやすい典型的なパターンにあたります。</p>
+
+  <h3>F. 免責の記載がない</h3>
+  <div class="tw">
+  <table>
+    <thead><tr><th>項目</th><th class="c">有無</th></tr></thead>
+    <tbody>
+      <tr><td>特定商取引法に基づく表記</td><td class="c"><span class="tag ok">あり</span></td></tr>
+      <tr><td>プライバシーポリシー</td><td class="c"><span class="tag ok">あり</span></td></tr>
+      <tr><td>会社概要</td><td class="c"><span class="tag ok">あり</span></td></tr>
+      <tr><td>キャンセルポリシー</td><td class="c"><span class="tag ok">あり</span></td></tr>
+      <tr><td><strong>成果に個人差がある旨</strong></td><td class="c"><span class="tag ng">なし</span></td></tr>
+      <tr><td><strong>成果を保証するものではない旨</strong></td><td class="c"><span class="tag ng">なし</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note warn">
+    <span class="t">基準がLPに適用されていませんでした</span>
+    <p>体験談で成果を語るページに免責がないと、「約束」と読まれます。8月28日に、いただいた方針（金額・年商・収入の数字は出さない）に従って本アカウントのプロフィールからは年商の数字を外しています。<strong>同じ基準が、LPには適用されていませんでした。</strong></p>
+  </div>
+
+  <h2 id="s6"><span class="num">06</span>なぜ9月2日から6日は配信できたのか</h2>
+
+  <p>X広告の審査は、初回だけでなく配信中も継続的に行われます。</p>
+
+  <pre class="flow">9/2        自動審査を通過 → 配信開始
+9/2 〜 9/6  配信量が増える（累計15万インプレッション）
+9/7 午前    人的レビューが入る → LPを検知 → Halted
+9/8・9/9    配信が完全にゼロ</pre>
+
+  <p>止まったのは9月7日の午前10時台で、これはレビューが入った時刻と読めます。<strong>配信が伸びたから見つかった、という関係です。</strong>CTRが0.50%から0.89%に上がっていたことと表裏になっています。</p>
+
+  <h2 id="s7"><span class="num">07</span>直す順番の提案</h2>
+
+  <div class="tw">
+  <table>
+    <thead><tr><th class="c">#</th><th>やること</th><th class="c">効果</th><th>担当</th></tr></thead>
+    <tbody>
+      <tr><td class="c">1</td><td><strong>1画面目の画像「書くだけで願望を引き寄せる」を差し替える</strong><br>例：「願望の書き方を見直したら、変わったこと」</td><td class="c"><span class="tag ng">最大</span></td><td>画像の差し替えが必要。望月さん側の素材</td></tr>
+      <tr><td class="c">2</td><td><strong>「このノートに書いた願望は全て叶う」の画像を外す／変える</strong></td><td class="c"><span class="tag ng">最大</span></td><td>同上</td></tr>
+      <tr><td class="c">3</td><td>3画面目「1ヶ月〜遅くても3ヶ月以内に実現する」を外す</td><td class="c">大</td><td>テキスト。こちらで直せます</td></tr>
+      <tr><td class="c">4</td><td>Case見出しの画像（年商6億／18時間で引き寄せ／不動産オーナー）を差し替える</td><td class="c">大</td><td>画像。望月さん側の素材</td></tr>
+      <tr><td class="c">5</td><td>「魔法のノート」「なんでも願望を叶えてくれる」を弱める</td><td class="c">中</td><td>こちらで直せます</td></tr>
+      <tr><td class="c">6</td><td>金額（年商6億／2,500万円／500万円）と期間（3ヶ月後／18時間後／6ヶ月後）を落とす</td><td class="c">中</td><td>こちらで直せます</td></tr>
+      <tr><td class="c">7</td><td>免責を入れる（成果には個人差があります／成果を保証するものではありません）</td><td class="c">中</td><td>こちらで直せます</td></tr>
+      <tr><td class="c">8</td><td>広告文はそのままでよい</td><td class="c">—</td><td>—</td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="note ok">
+    <span class="t">9月1日にLPをこちらの環境へ持ってきたことが、ここで効きます</span>
+    <p>計測タグを入れるためにLPを複製してVercelに置いてあるので、文言はこちらで直せます。元のLPを触る必要がありません。</p>
+  </div>
+
+  <div class="note warn">
+    <span class="t">ただし、いちばん効く1・2・4は画像です</span>
+    <p>差し替えの素材が要るので、望月さん・山口さんの判断と素材が必要になります。また、文言は望月さんのブランドの一部でもあるので、どこまで変えてよいかの判断をいただきたいです。</p>
+  </div>
+
+  <h2 id="s8"><span class="num">08</span>この分析の限界</h2>
+
+  <ul class="check">
+    <li>X側から「LPのこの一文が原因」という個別の通知は来ていません。画面に出ているのはポリシー名（欺瞞的および詐欺的コンテンツ）だけです。</li>
+    <li>上記は、ポリシー原文とLPの全画像・全文を突き合わせた<strong>推定</strong>です。</li>
+    <li>ただし「特定の期間内での成果」「結果を約束または示唆」という禁止項目と、「書くだけで願望を引き寄せる」「全て叶う」「1ヶ月〜遅くても3ヶ月以内に実現」「18時間で引き寄せ」という記述は、<strong>言葉としてほぼ一致しています。</strong></li>
+    <li>広告クリエイティブ3本には該当する表現がひとつもないので、消去法でもLPが残ります。</li>
+  </ul>
+
+  <div class="pager">
+    <a href="index.html"><span class="label">目次</span><span class="name">レポート一覧に戻る</span></a>
+    <a href="report2.html"><span class="label">第2回 ／ 2026.09.15</span><span class="name">2回目の停止：LPは直っていた →</span></a>
+  </div>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">オーダーノート X広告 要因分析レポート 第1回 ／ 2026年9月10日</div>
+</footer>
+
+</body>
+</html>
