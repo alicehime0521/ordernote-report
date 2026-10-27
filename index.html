@@ -4,20 +4,26 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex,nofollow">
-<title>X広告 審査落ち 要因分析レポート｜オーダーノート</title>
+<title>X広告レポート｜オーダーノート</title>
 <link rel="stylesheet" href="style.css">
+<style>
+.cards.three{gap:16px}
+@media(min-width:660px){.cards.three{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.cards.three{grid-template-columns:repeat(3,1fr)}}
+.card.now{border-color:var(--ok);background:var(--ok-bg)}
+</style>
 </head>
 <body>
 
 <header class="masthead">
   <div class="wrap">
     <p class="eyebrow">オーダーノート ／ X広告</p>
-    <h1>X広告 審査落ち 要因分析レポート</h1>
-    <p class="sub">「欺瞞的および詐欺的コンテンツ」による配信停止について、Xのポリシー原文に照らして調査した記録です。</p>
+    <h1>X広告レポート</h1>
+    <p class="sub">配信停止を調べた記録と、3回目（第3期）の22日間の数字、これからの出し方をまとめています。</p>
     <ul class="meta">
-      <li>対象期間：2026年9月2日 〜 9月15日</li>
+      <li>対象期間：2026年9月2日 〜 10月15日</li>
       <li>作成：加藤朋香</li>
-      <li>最終更新：2026年9月16日</li>
+      <li>最終更新：2026年10月16日</li>
     </ul>
   </div>
 </header>
@@ -25,11 +31,11 @@
 <main class="wrap">
 
   <div class="verdict">
-    <p class="lead">2回止まりました。1回目の原因はLPで、そこは直りました。2回目はLPの外に原因が残っています。</p>
-    <p>広告の本文と遷移先のLPは、2回目の停止時点ではポリシーに触れる表現が残っていませんでした。実際に残っていたのは、<strong>広告主アカウントのプロフィール欄に貼られたままの旧LPのURL</strong>です。1回目に「これが原因」と特定した文言が、そのリンク先に一字も変わらず掲載されていました。</p>
+    <p class="lead">第3期は22日間動き、これまでで一番長く持ちました。ただ、10月12日に最後の1本（案2）も止まり、いまは3本とも配信が止まっています。</p>
+    <p>1回目の原因は遷移先のLP、2回目はアカウントのプロフィールに残っていた旧LPのリンクと見て、その2か所を直して9月21日に出し直しました。案3は9/25、案1は10/8、案2は10/12に、いずれも「欺瞞的および詐欺的コンテンツ」で止まっています。<strong>9月2日〜10月8日のLINE登録は46件、1件あたり約1,628円です。これからの出し方の選択肢は第4回にまとめています。</strong></p>
   </div>
 
-  <div class="cards">
+  <div class="cards three">
     <a class="card" href="report1.html">
       <span class="k">第 1 回 ／ 2026.09.10</span>
       <span class="h">1回目の停止：原因はLPだった</span>
@@ -42,83 +48,68 @@
       <p class="d">差し替えた広告とLPを再確認し、両方シロと判定。残っていたのはアカウントのプロフィールから旧LPへ行ける状態でした。</p>
       <span class="go">レポートを読む →</span>
     </a>
+    <a class="card" href="report3.html">
+      <span class="k">第 3 回 ／ 2026.10.01</span>
+      <span class="h">修正版3の配信レポート</span>
+      <p class="d">3本で5日、案3が止まってから2本で5日。日別の数字、3本と2本の比較、予算の寄り方、LINE登録について。</p>
+      <span class="go">レポートを読む →</span>
+    </a>
+    <a class="card now" href="report4.html">
+      <span class="k">第 4 回 ／ 2026.10.16</span>
+      <span class="h">3本とも停止と、次の出し方</span>
+      <p class="d">案1・案2も止まり、第3期は22日間で終了。10月の日別、本数ごとの比較、LINE登録と1件あたりの費用、基準との照らし合わせ、これからの選択肢4つ。</p>
+      <span class="go">レポートを読む →</span>
+    </a>
   </div>
 
-  <h2><span class="num">01</span>2回の停止で、何が分かったか</h2>
+  <h2><span class="num">01</span>3回の出稿で、何が分かったか</h2>
 
   <div class="tw">
   <table>
     <thead>
-      <tr><th>調べた場所</th><th class="c">1回目（9/7停止）</th><th class="c">2回目（9/12停止）</th></tr>
+      <tr><th>調べた場所</th><th class="c">1回目（9/7停止）</th><th class="c">2回目（9/12停止）</th><th class="c">3回目（9/21〜10/12）</th></tr>
     </thead>
     <tbody>
-      <tr><td>広告の本文・画像</td><td class="c"><span class="tag ok">問題なし</span></td><td class="c"><span class="tag ok">問題なし</span></td></tr>
-      <tr><td>遷移先のLP</td><td class="c"><span class="tag ng">これが原因</span></td><td class="c"><span class="tag ok">差し替え済み</span></td></tr>
-      <tr><td>アカウントのプロフィール</td><td class="c"><span class="tag flat">未調査</span></td><td class="c"><span class="tag ng">旧LPのまま</span></td></tr>
-      <tr><td>同じキャンペーンに残る停止済みの広告</td><td class="c"><span class="tag flat">—</span></td><td class="c"><span class="tag warn">残っている</span></td></tr>
-      <tr><td>アカウントの違反履歴</td><td class="c">1回</td><td class="c"><span class="tag warn">2回</span></td></tr>
+      <tr><td>広告の本文・画像</td><td class="c"><span class="tag ok">問題なし</span></td><td class="c"><span class="tag ok">問題なし</span></td><td class="c"><span class="tag ok">問題なし</span></td></tr>
+      <tr><td>遷移先のLP</td><td class="c"><span class="tag ng">これが原因</span></td><td class="c"><span class="tag ok">差し替え済み</span></td><td class="c"><span class="tag ok">差し替え済み</span></td></tr>
+      <tr><td>アカウントのプロフィール</td><td class="c"><span class="tag flat">未調査</span></td><td class="c"><span class="tag ng">旧LPのまま</span></td><td class="c"><span class="tag ok">修正済み</span></td></tr>
+      <tr><td>同じキャンペーンに残る停止済みの広告</td><td class="c"><span class="tag flat">—</span></td><td class="c"><span class="tag warn">残っている</span></td><td class="c"><span class="tag ok">別キャンペーンに分離</span></td></tr>
+      <tr><td>配信の状態</td><td class="c"><span class="tag ng">5日で停止</span></td><td class="c"><span class="tag ng">1日で停止</span></td><td class="c"><span class="tag warn">案3 9/25・案1 10/8・案2 10/12に停止</span><br><span class="tag ok">22日間持った</span></td></tr>
     </tbody>
   </table>
   </div>
 
-  <p>広告そのものは2回とも問題がありませんでした。1回目で直したのは遷移先のLPで、それは確かに直っていました。<strong>ただし、広告の遷移先を新しいLPに差し替えただけで、プロフィール欄のURLには手をつけていませんでした。</strong>そのため、アカウントのプロフィールからは、いまも旧LPに行ける状態が残っています。</p>
+  <p>審査は広告そのものだけを見ているわけではなく、<strong>広告 → 遷移先 → 広告主のアカウント、という一本の線で見られています。</strong>3回目は、その3か所をそろえてから出しています。それでも止まった案3は、本文が「〜する。〜する。」という指示の形で、画像も断定でした。残った案1・案2はどちらも本人の体験談の形です。</p>
 
-  <h2><span class="num">02</span>2回目が止まるまでの数字</h2>
+  <h2><span class="num">02</span>数字の比較</h2>
 
   <div class="strip">
-    <div class="stat"><div class="l">インプレッション</div><div class="v">30,127</div></div>
-    <div class="stat"><div class="l">リンククリック</div><div class="v">229</div></div>
-    <div class="stat"><div class="l">CTR</div><div class="v">0.76<small>%</small></div></div>
+    <div class="stat"><div class="l">クリック単価 第2期</div><div class="v">¥22.6</div></div>
+    <div class="stat"><div class="l">第3期 3本の5日間</div><div class="v">¥16.7</div></div>
+    <div class="stat"><div class="l">第3期 2本の5日間</div><div class="v">¥31.0</div></div>
   </div>
 
-  <p>1回目のCTRは0.69%だったので、<strong>数字はむしろ良くなっていました。成績が悪くて止まったわけではありません。</strong>配信できたのは2日間で、消化は5,183円です。</p>
+  <p><strong>3本そろっていた5日間がこれまでで一番いい数字で、2本になってから同じ金額で取れるクリックがほぼ半分になりました。</strong>10日間の合計は、消化29,870円、クリック1,375件、LINE登録は9/21〜26で12件（1件あたり約1,495円）です。</p>
 
-  <h2><span class="num">03</span>いただいた判断（2026年9月16日）</h2>
-
-  <div class="tw">
-  <table>
-    <thead><tr><th>確認したこと</th><th>ご回答</th></tr></thead>
-    <tbody>
-      <tr><td>2つのアカウントのプロフィール（リンクと表示名）を、こちらで直してよいか</td><td><span class="tag ok">修正してOK</span></td></tr>
-      <tr><td>3回目の出稿をどうするか</td><td><strong>このアカウントのまま進める。</strong>やり直しはその後で</td></tr>
-    </tbody>
-  </table>
-  </div>
-
-  <p>ありがとうございます。<strong>この方針で進めます。</strong>ただし順番として、<strong>プロフィールを直してから出します。</strong>直さずに出すと、3回目も同じ理由で止まる可能性が高いままになるためです。</p>
-
-  <h2><span class="num">04</span>もう一点だけ、決めていただきたいこと</h2>
-
-  <div class="note warn">
-    <span class="t">旧LPそのものを、差し替えますか。そのまま残しますか。</span>
-    <p>プロフィールのリンクを新LPに向けると、<strong>流入元の識別子が変わるので、集計に影響が出ます。</strong>新LPと同じ内容で識別子だけ合わせたページを1枚用意すれば、集計を壊さずに差し替えられます（作業は30分ほどです）。</p>
-    <p>「集計は気にしなくていいので先に差し替えて」でも大丈夫です。どちらがよいか教えてください。</p>
-  </div>
-
-  <h2><span class="num">05</span>これからやること</h2>
+  <h2><span class="num">03</span>これからやること</h2>
 
   <ul class="check">
-    <li><strong>広告出稿用アカウントのプロフィールを直す。</strong>ウェブサイト欄を新LPに差し替え、表示名から「引き寄せ」を外します。</li>
-    <li><strong>メインアカウントのプロフィールも、同じく差し替える。</strong>片方だけ直しても、もう片方から旧LPに着いてしまうためです。</li>
-    <li><strong>停止済みの旧6本をアーカイブする。</strong></li>
-    <li><strong>新しいキャンペーンを作って、9月11日の3本をそのまま出す。</strong>アカウントは変えませんが、キャンペーンは分けます。停止済みの広告が残っているキャンペーンに足さないことで、原因候補をひとつ減らせるためです。</li>
-    <li><strong>LINE登録ページの中身を確認する。</strong>ここだけ、まだ見られていません。</li>
+    <li><strong>進め方を決めていただく。</strong>同じアカウントで再審査を依頼する／訴求を変えて出す／別アカウント／いったん止めて自社コンテンツを優先、の4つを第4回で比べています。</li>
+    <li><strong>10月9日以降のLINE登録数をいただいて、第3期全体の1件あたりの費用と、100リストまでの残りを出す。</strong></li>
+    <li><strong>止まった広告をアーカイブする。</strong>再審査の依頼（Appeal）は、まだ一度も押していません。</li>
   </ul>
-
-  <div class="note warn">
-    <span class="t">お伝えしておきたいこと</span>
-    <p>再審査請求（Appeal）は押していません。修正しないまま出すとアカウント自体が危うくなるためです。</p>
-  </div>
 
   <div class="pager">
     <a href="report1.html"><span class="label">第1回 ／ 2026.09.10</span><span class="name">1回目の停止：原因はLPだった</span></a>
     <a href="report2.html"><span class="label">第2回 ／ 2026.09.15</span><span class="name">2回目の停止：LPは直っていた</span></a>
+    <a href="report3.html"><span class="label">第3回 ／ 2026.10.01</span><span class="name">修正版3の配信レポート</span></a>
+    <a href="report4.html"><span class="label">第4回 ／ 2026.10.16</span><span class="name">3本とも停止と、次の出し方</span></a>
   </div>
 
 </main>
 
 <footer class="foot">
-  <div class="wrap">オーダーノート X広告 要因分析レポート ／ 2026年9月16日</div>
+  <div class="wrap">オーダーノート X広告 レポート ／ 2026年10月16日</div>
 </footer>
 
 </body>
